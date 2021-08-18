@@ -6,13 +6,76 @@
 # puts "#{employee2[0]} #{employee2[1]} makes #{employee2[2]} a year."
 
 # represent an employee as a hash
-employee1 = {
-  first_name: "Jay", 
-  last_name: "Wengrow", 
-  salary: 20000000, 
-  active: true
-}
-employee2 = {:first_name => "Peter", :last_name => "Jang", :salary => 25000, :active => true}
+# employee1 = {
+#   first_name: "Jay", 
+#   last_name: "Wengrow", 
+#   salary: 20000000, 
+#   active: true
+# }
+# employee2 = {:first_name => "Peter", :last_name => "Jang", :salary => 25000, :active => true}
 
-puts "#{employee1[:first_name]} #{employee1[:last_name]} makes #{employee1[:salary]} a year."
-puts "#{employee2[:first_name]} #{employee2[:last_name]} makes #{employee2[:salary]} a year."
+# puts "#{employee1[:first_name]} #{employee1[:last_name]} makes #{employee1[:salary]} a year."
+# puts "#{employee2[:first_name]} #{employee2[:last_name]} makes #{employee2[:salary]} a year."
+
+# represent an employee as a class instance
+class Employee
+  def initialize(input_first_name, input_last_name, input_salary, input_active)
+    @first_name = input_first_name
+    @last_name = input_last_name
+    @salary = input_salary
+    @active = input_active
+  end
+
+  # reader/getter methods
+  def first_name
+    @first_name
+  end
+
+  def last_name
+    @last_name
+  end
+
+  def salary
+    @salary
+  end
+
+  def active
+    @active
+  end
+
+  # writer/setter methods
+  def first_name=(input_first_name)
+    @first_name = input_first_name
+  end
+
+  def active=(input_active)
+    @active = input_active
+  end
+
+  def give_annual_raise
+    @salary = 1.05 * @salary
+  end
+
+  # instance method
+  def print_info
+    puts "#{first_name} #{last_name} makes #{salary} a year."
+  end
+end
+
+employee1 = Employee.new("Jay", "Wengrow", 20000000, true)
+employee2 = Employee.new("Peter", "Jang", 25000, true)
+employee1.print_info
+employee2.print_info
+puts employee2.give_annual_raise
+employee2.first_name = "Pete"
+employee2.active=(false)
+puts employee2.first_name
+puts employee2.last_name
+puts employee2.salary
+puts employee2.active
+
+
+# 'kebab-case' 
+# 'snake_case' 
+# 'camelCaseIsCool'
+# 'GiraffeCase' #pascal case
