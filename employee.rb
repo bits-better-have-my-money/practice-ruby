@@ -6,7 +6,12 @@
 # puts "#{employee2[0]} #{employee2[1]} makes #{employee2[2]} a year."
 
 # represent an employee as a hash
-employee1 = {first_name: "Jay", last_name: "Wengrow", salary: 20000000, active: true}
+employee1 = {
+  first_name: "Jay", 
+  last_name: "Wengrow", 
+  salary: 20000000, 
+  active: true
+}
 employee2 = {:first_name => "Peter", :last_name => "Jang", :salary => 25000, :active => true}
 
 puts "#{employee1[:first_name]} #{employee1[:last_name]} makes #{employee1[:salary]} a year."
