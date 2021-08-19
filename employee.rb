@@ -24,13 +24,14 @@ module Actualize
   class Employee
     # attr_reader :first_name, :last_name, :salary, :active
     # attr_writer :first_name, :last_name, :active
-    attr_accessor :first_name, :last_name, :salary, :active
+    attr_accessor :first_name, :last_name, :salary, :active, :email
 
     def initialize(input_options)
       @first_name = input_options[:first_name]
       @last_name = input_options[:last_name]
       @salary = input_options[:salary]
       @active = input_options[:active]
+      @email = input_options[:email] || "#{@first_name}#{@last_name}@gmail.com"
     end
 
     def give_annual_raise
@@ -43,6 +44,11 @@ module Actualize
     end
   end
 end
+
+employee1 = Actualize::Employee.new({first_name: "Majora", last_name: "Carter", salary: 80000, active: true, email: "mcarter@gmail.com"})
+employee2 = Actualize::Employee.new(first_name: "Danilo", last_name: "Campos", salary: 70000, active: true, email: nil)
+p employee1.email
+p employee2.email
 
 
 # 'kebab-case' 
